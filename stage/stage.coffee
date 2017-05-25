@@ -4,10 +4,12 @@ config =
     email       : 'mark@delorum.com'
     adminPath   : 'path/to/admin/in/cur/context'
     appsPath    : 'path/to/admin/in/cur/context'
+    id          : '1234'
   teams : [
-    {name:'fish_feather', appsPath:'abcdefg1234567', adminPath: 'path/to/admin/in/cur/context'}
-    {name:'quatrote',     appsPath:'abcdefg1234567', adminPath: 'path/to/admin/in/cur/context'}
+    {name:'fish_feather', appsPath:'abcdefg1234567', adminPath: 'path/to/admin/in/cur/context', id:'4444'}
+    {name:'quatrote',     appsPath:'abcdefg1234567', adminPath: 'path/to/admin/in/cur/context', id:'5555'}
   ]
+  contextId   : '1234'
   logoutPath  : 'path/to/logout'
   newTeamPath : '/path/to/create/new/team'
 
