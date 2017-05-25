@@ -2,11 +2,11 @@
   
   //- Teams
   .teams
-    .team(href="")
+    .team(href="#{user.appsPath}" class= contextId == user.id ? "active" : "")
       img.profile(src="https://secure.gravatar.com/avatar/#{gravatarHash}?d=retro&r=pg&size=36")
       .name= user.username
     each team in teams
-      a.team(href="#{team.path}")
+      a.team(href="#{team.appsPath}" class= contextId == team.id ? "active" : "")
         img.profile(src="https://secure.gravatar.com/avatar/#{gravatarHash}?d=retro&r=pg&size=36")
         .name= team.name
         .letter(style="background-color:#{team.color}")= team.name.charAt(0)
@@ -16,7 +16,9 @@
     .top
       .image-box
         img.profile(src="https://secure.gravatar.com/avatar/#{gravatarHash}?d=retro&r=pg&size=36")
+        if currentContext.isTeam
+          .letter(style="background-color:#{currentContext.color}")= currentContext.name.charAt(0)
       .actions
-        a(href="#{user.adminPath}") Admin
-        a(href="#{user.logoutPath}") Logout
+        a(href="#{currentContext.adminPath}") Admin
+        a(href="#{logoutPath}") Logout
     a.new-team(href="#{newTeamPath}") Create a new team

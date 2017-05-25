@@ -3,12 +3,14 @@
   .teams,
   .account-admin  {background: white; box-shadow: 0 2px 7px 3px rgba(black, 0.15)}
   .teams          {
-    .team         {display: flex; align-items: center; padding:10px 20px; border-bottom: solid 1px $border-col; position: relative;
+    .team         {display: flex; align-items: center; padding:10px 20px 10px 30px ; border-bottom: solid 1px $border-col; position: relative; white-space: nowrap;
       img         {width:25px; height:25px; margin-right:8px;  }
       .name       {color:#3f5f6b; font-size:15px; }
-      .letter     {position: absolute; width:25px; text-align: center; color:white; z-index: 2; font-size:17px; text-transform:uppercase; width:25px; height:25px; background: rgba(red, 0.7); border-radius: 50%; padding-top:3px}
       &:hover     {background: #F5FDFF;
         .name     {color:#012642;}
+      }
+      &.active    {
+        &:before  {content:">"; position:absolute;  color:#D1D1D1;  left: 10px; top: 50%; transform: translateY(-50%); font-weight: $bold;  font-size:16px; }
       }
     }
   }
@@ -16,7 +18,7 @@
     .top          {display: flex;
       .image-box  {width:60px; height:60px; display: flex; align-items: center; justify-content: center; border: solid 1px $border-col; }
       .actions    {display: flex; flex-direction: column; flex-grow: 2;
-        a         {display: flex; border-bottom: solid 1px $border-col; flex-grow: 1; align-items: center; padding-left:10px; @include caps(#65bafc, 12px); letter-spacing: 0.04em; text-align: center; width:100%;
+        a         {display: flex; border-bottom: solid 1px $border-col; flex-grow: 1; align-items: center; padding:0 10px; @include caps(#65bafc, 12px); letter-spacing: 0.04em; text-align: center; width:100%;
           &:hover {color:#217CC3}
         }
       }

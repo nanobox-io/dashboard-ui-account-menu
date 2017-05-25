@@ -29,13 +29,24 @@ class AccountMenu
   parseData : () ->
     # get user gravatar hash
     @config.gravatarHash = md5 @config.user.email
+    @setTeamColors()
+    @setCurrentContext()
 
+  setCurrentContext : () ->
+    @config.currentContext = @config.user
+    for team in @config.teams
+      if team.id == @config.contextId
+        team.isTeam = true
+        @config.currentContext = team
+
+  setTeamColors : () ->
     # set team colors
     colors = ["#F07146", "#F046A1", "#00BACC", "#00A42E", "#F00000"]
     count  = 0
     for team in @config.teams
       team.color = @hexToRgb(colors[count++], 0.7)
       if count == colors.length then count = 0
+
 
   hexToRgb : (hex, alpha) ->
     result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
