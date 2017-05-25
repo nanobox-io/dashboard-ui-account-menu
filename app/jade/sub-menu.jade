@@ -19,6 +19,6 @@
         if currentContext.isTeam
           .letter(style="background-color:#{currentContext.color}")= currentContext.name.charAt(0)
       .actions
-        a(href="#") Admin
+        a(href="#{currentContext.adminPath}") Admin
         a#logout(href="#" data-logout="#{currentContext.adminPath}") Logout
     a.new-team(href="#{newTeamPath}") Create a new team
