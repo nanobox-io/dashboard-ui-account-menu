@@ -8,6 +8,10 @@ module.exports = class SubMenu
   build : ($el) ->
     @$node = $ subMenu( @config )
     $el.append @$node
+    $("#logout").on 'click', (e)->
+      $.ajax
+        type : "DELETE",
+        url  :  e.currentTarget.dataset.logout
 
   destroy : () ->
     @$node.remove()
