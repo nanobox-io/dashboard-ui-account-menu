@@ -1,0 +1,18 @@
+.account-sub-menu
+  
+  //- Teams
+  .teams
+    each team in teams
+      .team
+        img.profile(src="https://secure.gravatar.com/avatar/96b5571d8a9cd5b868226a5bd527d8ed?d=retro&r=pg&size=36")
+        .name team.name
+  
+  //- Admin
+  .account-admin
+    .top
+      .image-box
+        img.profile(src="https://secure.gravatar.com/avatar/96b5571d8a9cd5b868226a5bd527d8ed?d=retro&r=pg&size=36")
+      .actions
+        a(href="http://google.com") Admin
+        a(href="#") Logout
+    .new-team Create a new team

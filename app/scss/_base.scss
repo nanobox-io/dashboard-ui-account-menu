@@ -1,0 +1,8 @@
+.account-menu{position: relative; display: inline-block; cursor:pointer;
+  img.profile{width:36px; height:36px; border-radius: 50%; }
+  .circ-arrow{width:13px; height:13px; border-radius: 50%; background: white; position: absolute; right:-3px; bottom:-1px; pointer-events: none; 
+    &:after  {content:""; width: 0; height: 0; border-style: solid; border-width: 6px 4px 0 4px; border-color: #007bff transparent transparent transparent; position: absolute; top:4px; left:3px; }
+  }
+  @import "drop-down";
+  @import "sub-menu";
+}

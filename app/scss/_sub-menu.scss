@@ -1,0 +1,19 @@
+.account-sub-menu {position: absolute; top:50px; right:-15px;
+  $border-col:#E6E6E6;
+  .teams,
+  .account-admin  {background: white; box-shadow: 0 2px 7px 3px rgba(black, 0.15)}
+  .teams          {
+    .team         {display: flex; align-items: center; padding:10px 20px; border-bottom: solid 1px $border-col;
+      img         {width:25px; height:25px; margin-right:8px;  }
+    }
+  }
+  .account-admin  {margin-top:10px;
+    .top          {display: flex;
+      .image-box  {width:60px; height:60px; display: flex; align-items: center; justify-content: center; border: solid 1px $border-col; }
+      .actions    {display: flex; flex-direction: column; flex-grow: 2;
+        a         {display: flex; border-bottom: solid 1px $border-col; flex-grow: 1; align-items: center; margin-left:10px; @include caps(#65bafc, 12px); letter-spacing: 0.04em; text-align: center; width:100%; }
+      }
+    }
+    .new-team     {font-size:13px; font-style:italic; font-weight:$medium; color:#0d76b7; padding:3px 0; text-align: center;; }
+  }
+}
