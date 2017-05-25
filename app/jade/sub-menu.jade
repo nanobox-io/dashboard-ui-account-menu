@@ -20,5 +20,5 @@
           .letter(style="background-color:#{currentContext.color}")= currentContext.name.charAt(0)
       .actions
         a(href="#{currentContext.adminPath}") Admin
-        a#logout(href="#" data-logout="#{currentContext.logoutPath}") Logout
+        a#logout(href="#" data-logout="#{logoutPath}") Logout
     a.new-team(href="#{newTeamPath}") Create a new team
