@@ -2,8 +2,11 @@
   
   //- Teams
   .teams
+    .team(href="")
+      img.profile(src="https://secure.gravatar.com/avatar/#{gravatarHash}?d=retro&r=pg&size=36")
+      .name= user.username
     each team in teams
-      .team
+      a.team(href="#{team.path}")
         img.profile(src="https://secure.gravatar.com/avatar/#{gravatarHash}?d=retro&r=pg&size=36")
         .name= team.name
         .letter(style="background-color:#{team.color}")= team.name.charAt(0)
