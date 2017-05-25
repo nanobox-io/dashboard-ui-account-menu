@@ -2,7 +2,7 @@
   
   //- Teams
   .teams
-    .team(href="#{user.appsPath}" class= contextId == user.id ? "active" : "")
+    a.team(href="#{user.appsPath}" class= contextId == user.id ? "active" : "")
       img.profile(src="https://secure.gravatar.com/avatar/#{gravatarHash}?d=retro&r=pg&size=36")
       .name= user.username
     each team in teams
