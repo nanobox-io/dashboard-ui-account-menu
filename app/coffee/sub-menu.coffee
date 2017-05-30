@@ -12,7 +12,7 @@ module.exports = class SubMenu
       $.ajax
         type     : "DELETE",
         url      :  @config.logoutPath
-        success  : ()=> console.log @config.loginPath
+        success  : ()=> window.location = @config.loginPath
         error    : ()=> alert "Logout failed, try again"
 
   destroy : () ->
