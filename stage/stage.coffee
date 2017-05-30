@@ -11,6 +11,7 @@ config =
   ]
   contextId   : '5555'
   logoutPath  : 'path/to/logout'
+  loginPath   : 'path/to/login'
   newTeamPath : '/path/to/create/new/team'
 
 app = new nanobox.AccountMenu $(".holder"), config
