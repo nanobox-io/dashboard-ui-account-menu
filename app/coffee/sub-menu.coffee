@@ -6,11 +6,9 @@ module.exports = class SubMenu
     @build $el
 
   build : ($el) ->
-    console.log "building sub menu"
     @$node = $ subMenu( @config )
     $el.append @$node
     $("#logout").on 'click', (e)=>
-      console.log "Logging out..."
       $.ajax
         type     : "DELETE",
         url      :  @config.logoutPath
