@@ -1,6 +1,7 @@
 .account-menu
   #profile-img
-    img.profile(src="https://secure.gravatar.com/avatar/#{gravatarHash}?d=retro&r=pg&size=36")
-    if currentContext.isTeam
-      .letter(style="background-color:#{currentContext.color}")= currentContext.name.charAt(0)
+    .profile
+      img(src="https://secure.gravatar.com/avatar/#{gravatarHash}?d=retro&r=pg&size=36")
+      if currentContext.isTeam
+        .letter(style="background-color:#{currentContext.color}")= currentContext.name.charAt(0)
     .circ-arrow

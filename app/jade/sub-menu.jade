@@ -1,23 +1,27 @@
 .account-sub-menu
   
   //- Teams
-  .teams
-    a.team(href="#{user.appsPath}" class= contextId == user.id ? "active" : "")
-      img.profile(src="https://secure.gravatar.com/avatar/#{gravatarHash}?d=retro&r=pg&size=36")
-      .name= user.username
-    each team in teams
-      a.team(href="#{team.appsPath}" class= contextId == team.id ? "active" : "")
-        img.profile(src="https://secure.gravatar.com/avatar/#{gravatarHash}?d=retro&r=pg&size=36")
-        .name= team.name
-        .letter(style="background-color:#{team.color}")= team.name.charAt(0)
+  if teams.length > 0
+    .teams
+      a.team(href="#{user.appsPath}" class= contextId == user.id ? "active" : "")
+        .profile
+          img(src="https://secure.gravatar.com/avatar/#{gravatarHash}?d=retro&r=pg&size=36")
+        .name= user.username
+      each team in teams
+        a.team(href="#{team.appsPath}" class= contextId == team.id ? "active" : "")
+          .profile
+            img(src="https://secure.gravatar.com/avatar/#{gravatarHash}?d=retro&r=pg&size=36")
+            .letter(style="background-color:#{team.color}")= team.name.charAt(0)
+          .name= team.name
   
   //- Admin
   .account-admin
     .top
       .image-box
-        img.profile(src="https://secure.gravatar.com/avatar/#{gravatarHash}?d=retro&r=pg&size=36")
-        if currentContext.isTeam
-          .letter(style="background-color:#{currentContext.color}")= currentContext.name.charAt(0)
+        .profile
+          img(src="https://secure.gravatar.com/avatar/#{gravatarHash}?d=retro&r=pg&size=36")
+          if currentContext.isTeam
+            .letter(style="background-color:#{currentContext.color}")= currentContext.name.charAt(0)
       .actions
         a(href="#{currentContext.adminPath}") Admin
         a#logout(href="#" data-logout="#{logoutPath}") Logout

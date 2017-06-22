@@ -1,7 +1,11 @@
-.account-sub-menu {position: absolute; top:50px; right:-15px;
+.account-sub-menu {position: absolute; top:55px; right:-15px;
+  @mixin shadowed {
+    -webkit-filter: drop-shadow(0px 2px 7px rgba(70,70,70,0.15));
+    filter        : drop-shadow(0px 2px 7px rgba(70,70,70,0.15));
+  }
   $border-col:#E6E6E6;
   .teams,
-  .account-admin  {background: white; box-shadow: 0 2px 7px 3px rgba(black, 0.15)}
+  .account-admin  {background: white; @include shadowed; }
   .teams          {
     .team         {display: flex; align-items: center; padding:10px 20px 10px 30px ; border-bottom: solid 1px $border-col; position: relative; white-space: nowrap;
       img         {width:25px; height:25px; margin-right:8px;  }
@@ -16,7 +20,7 @@
   }
   .account-admin  {margin-top:10px;
     .top          {display: flex;
-      .image-box  {width:60px; height:60px; display: flex; align-items: center; justify-content: center; border: solid 1px $border-col; }
+      .image-box  {width:60px; height:60px; display: flex; align-items: center; justify-content: center; border: solid 1px $border-col; border-top: none; border-left: none;}
       .actions    {display: flex; flex-direction: column; flex-grow: 2;
         a         {display: flex; border-bottom: solid 1px $border-col; flex-grow: 1; align-items: center; padding:0 10px; @include caps(#65bafc, 12px); letter-spacing: 0.04em; text-align: center; width:100%;
           &:hover {color:#217CC3}
@@ -27,4 +31,7 @@
       &:hover      {color:#005285}
     }
   }
+
+  // Top arrow
+  &:before{content:""; display: block; width: 0; top:-9px; position: absolute; right:25px; height: 0; border-style: solid; border-width: 0 7px 9px 7px; border-color: transparent transparent white transparent;}
 }
