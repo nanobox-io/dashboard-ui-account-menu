@@ -1,4 +1,4 @@
-config =
+initData =
   user:
     username    : 'j_appleseed'
     email       : 'mark@delorum.com'
@@ -14,4 +14,7 @@ config =
   loginPath   : 'path/to/login'
   newTeamPath : '/path/to/create/new/team'
 
-app = new nanobox.AccountMenu $(".holder"), config
+window.accountMenu = new nanobox.AccountMenu document.querySelector(".holder"), initData
+window.testDestroy = ()=>
+  window.app.destroy()
+  window.app = null

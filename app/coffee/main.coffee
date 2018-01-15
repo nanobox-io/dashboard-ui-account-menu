@@ -2,17 +2,22 @@ base    = require 'jade/base'
 SubMenu = require 'sub-menu'
 class AccountMenu
 
-  constructor: ($el, @config) ->
+  constructor: (@el, @config) ->
     @parseData()
-    @build($el)
+    @build()
 
-  build : ($el) ->
+  build : () ->
     @$node = $ base( @config )
-    $el.append @$node
+    $(@el).append @$node
     $("#profile-img").on 'click', (e)=>
       if @subMenu? then return
       @buildSubMenu()
       setTimeout @addDestroyListener, 50
+
+  destroy : () ->
+    @subMenu?.destroy()
+    @subMenu = null
+    $(@el).empty()
 
   buildSubMenu : () ->
     @subMenu = new SubMenu @$node, @config
@@ -46,7 +51,6 @@ class AccountMenu
     for team in @config.teams
       team.color = @hexToRgb(colors[count++], 0.7)
       if count == colors.length then count = 0
-
 
   hexToRgb : (hex, alpha) ->
     result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
